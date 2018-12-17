@@ -7,6 +7,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="badpig" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="JUnit5.3" module-name="badpig" />
+        </element>
       </element>
     </root>
   </artifact>
