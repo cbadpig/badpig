@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/js/ckeditor.js"></script>
+
+</head>
+<body>
+<h1>Document editor</h1>
+<textarea name="content" id="editor"></textarea>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ))
+        .then( editor => {
+            console.log( editor );
+            editor.model.document.on( 'change:data',() => {
+                console.log( '文本框内容发生变化');
+            } );
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+
+</script>
+</body>
+</html>

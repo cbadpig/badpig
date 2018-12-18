@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/js/ckeditor.js"></script>
+
+</head>
+<body>
+<h1>Document editor</h1>
+<textarea name="content" id="editor"></textarea>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ),{
+
+            toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+            heading: {
+                options: [
+                    { model: 'paragraph', title: '标题', class: 'ck-heading_paragraph' },
+                    { model: 'heading1', view: 'h1', title: 'H1', class: 'ck-heading_heading2' },
+                    { model: 'heading2', view: 'h2', title: 'H2', class: 'ck-heading_heading2' }
+                ]
+            }
+        } );
+</script>
+</body>
+</html>

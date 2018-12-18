@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/js/ckeditor.js"></script>
+
+</head>
+<br>
+<h1>Classic editor</h1>
+
+<textarea name="content" id="editor">
+    &lt;p&gt;This is some sample content.&lt;/p&gt;
+</textarea>
+<br><br>
+<button type="button" onclick="getData()" >获取值</button>
+<script>
+    var editor_value;
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .then( newEditor => {
+            editor_value = newEditor;
+        } )
+        .catch( error => {
+        console.error( error );
+    } );
+
+    function getData() {
+        alert(editor_value.getData());
+    }
+</script>
+</body>
+</html>
