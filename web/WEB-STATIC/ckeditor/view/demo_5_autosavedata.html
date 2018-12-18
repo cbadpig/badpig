@@ -25,7 +25,9 @@
                     { model: 'heading2', view: 'h2', title: 'H2', class: 'ck-heading_heading2' }
                 ]
             },
-
+            plugins:[
+                Autosave
+            ],
             autosave: {
                 save(editor) {
                     return saveData( editor.getData() );
@@ -38,8 +40,8 @@
         console.error( error );
     } );
 
-    function saveData(data) {
-        alert(data);
+    function getData() {
+        alert(editor_value.getData());
     }
 </script>
 </body>
