@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="../static/js/ckeditor.js"></script>
+    <script src="../static/js/ckeditor2.js"></script>
 
 </head>
 <br>
@@ -26,7 +26,7 @@
                 ]
             },
             plugins:[
-                Autosave
+                'Autosave'
             ],
             autosave: {
                 save(editor) {
@@ -40,8 +40,8 @@
         console.error( error );
     } );
 
-    function getData() {
-        alert(editor_value.getData());
+    function saveData(data) {
+        console.log(data);
     }
 </script>
 </body>
