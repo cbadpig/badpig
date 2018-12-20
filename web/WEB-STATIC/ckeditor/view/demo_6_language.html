@@ -20,7 +20,13 @@
     var editor_value;
     ClassicEditor
         .create( document.querySelector( '#editor' ),{
-            language: 'zh-cn'
+            language: 'zh-cn',
+            toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+            bold:{
+                options: [
+                    { model: 'bold', title: 'bold', class: 'ck-heading_paragraph' }
+                ]
+            }
         } )
         .then( newEditor => {
             editor_value = newEditor;
