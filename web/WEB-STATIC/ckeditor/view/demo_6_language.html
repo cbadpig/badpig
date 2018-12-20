@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../static/js/translations/zh-cn.js"></script>
     <script src="../static/js/ckeditor.js"></script>
+
 
 </head>
 <br>
@@ -15,24 +17,20 @@
 <br><br>
 
 <script>
+    var editor_value;
     ClassicEditor
         .create( document.querySelector( '#editor' ),{
-
-            autosave: {
-                save(editor) {
-                    return saveData( editor.getData() );
-                }
-            }
-
-
-
+            language: 'zh-cn'
+        } )
+        .then( newEditor => {
+            editor_value = newEditor;
         } )
         .catch( error => {
         console.error( error );
     } );
 
-    function saveData(data) {
-        console.log(data);
+    function getData() {
+        alert(editor_value.getData());
     }
 </script>
 </body>
