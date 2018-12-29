@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="../static/js/translations/zh-cn.js"></script>
     <script src="../static/js/ckeditor.js"></script>
-
-
+    <script src="../static/js/translations/zh-cn.js"></script>
 </head>
 <br>
 <h1>语言</h1>
@@ -14,26 +12,15 @@
 <textarea name="content" id="editor">
     &lt;p&gt;This is some sample content.&lt;/p&gt;
 </textarea>
-<br><br>
 
 <script>
     var editor_value;
-    ClassicEditor
-        .create( document.querySelector( '#editor' ),{
-            language: 'zh-cn',
-            toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
-            bold:{
-                options: [
-                    { model: 'bold', title: 'bold', class: 'ck-heading_paragraph' }
-                ]
-            }
-        } )
-        .then( newEditor => {
-            editor_value = newEditor;
+    ClassicEditor.create( document.querySelector( '#editor' ),{
+            language: 'zh-cn'
         } )
         .catch( error => {
-        console.error( error );
-    } );
+            console.error( error );
+        } );
 
     function getData() {
         alert(editor_value.getData());
