@@ -17,19 +17,15 @@
 <script>
     ClassicEditor
         .create( document.querySelector( '#editor' ),{
-
             autosave: {
                 save(editor) {
                     return saveData( editor.getData() );
                 }
             }
-
-
-
         } )
         .catch( error => {
-        console.error( error );
-    } );
+            console.error( error );
+        } );
 
     function saveData(data) {
         console.log(data);
