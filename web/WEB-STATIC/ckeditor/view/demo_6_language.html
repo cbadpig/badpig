@@ -16,11 +16,12 @@
 <script>
     var editor_value;
     ClassicEditor.create( document.querySelector( '#editor' ),{
+
             language: 'zh-cn'
         } )
         .catch( error => {
             console.error( error );
-        } );
+    } );
 
     function getData() {
         alert(editor_value.getData());
