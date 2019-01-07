@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/js/ckeditor.js"></script>
+    <script src="../static/js/translations/zh-cn.js"></script>
+</head>
+<br>
+<h1>只读模式</h1>
+
+<textarea name="content" id="editor">
+    &lt;p&gt;只读模式.&lt;/p&gt;
+</textarea>
+
+<script>
+    var eidtor;
+    ClassicEditor.create( document.querySelector( '#editor' ),{
+            language: 'zh-cn'
+        } )
+        .then( newEditor => {
+            eidtor = newEditor;
+            newEditor.isReadOnly = true;
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+</body>
+</html>
