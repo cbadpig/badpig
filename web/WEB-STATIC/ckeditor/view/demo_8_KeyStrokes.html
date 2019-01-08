@@ -20,7 +20,7 @@
         } )
         .then( newEditor => {
             eidtor = newEditor;
-            //取消快捷键功能，提示还存在
+            //取消快捷键功能，提示还存在,提示部分需要在源码中注释掉
             newEditor.keystrokes.destroy();
         } )
         .catch( error => {
