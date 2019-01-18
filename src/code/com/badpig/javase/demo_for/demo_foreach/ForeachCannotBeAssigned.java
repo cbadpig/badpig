@@ -1,4 +1,4 @@
-package code.com.badpig.javase.for_0.foreach;
+package code.com.badpig.javase.demo_for.demo_foreach;
 
 import java.util.ArrayList;
 import java.util.List;

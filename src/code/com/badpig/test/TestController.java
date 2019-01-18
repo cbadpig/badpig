@@ -1,9 +1,9 @@
-package code.com.badpig.test.controller;
+package code.com.badpig.test;
 
 import org.junit.jupiter.api.Test;
 
-import static code.com.badpig.javase.for_0.foreach.ForeachCannotBeAssigned.CannotBeAssigned_demo_1;
-import static code.com.badpig.javase.for_0.foreach.ForeachCannotBeAssigned.CannotBeAssigned_demo_2;
+import static code.com.badpig.javase.demo_for.demo_foreach.ForeachCannotBeAssigned.CannotBeAssigned_demo_1;
+import static code.com.badpig.javase.demo_for.demo_foreach.ForeachCannotBeAssigned.CannotBeAssigned_demo_2;
 
 public class TestController {
 
