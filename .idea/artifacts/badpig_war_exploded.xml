@@ -9,6 +9,9 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="module" name="JUnit5.3" module-name="badpig" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jackson-core-2.9.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jackson-databind-2.9.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jackson-annotations-2.9.8.jar" />
         </element>
       </element>
     </root>
