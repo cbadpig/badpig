@@ -11,18 +11,10 @@ public class UtilTest {
         System.out.println("当前时间毫秒数：" + DateUtil.currentTimeMillisString());
         System.out.println("当前类的两个毫秒数是否相同：" + DateUtil.currentTimeMillisString() == DateUtil.currentTimeMillisString());
         System.out.println("当前时间日期：" + DateUtil.nowDefault());
-        System.out.println("****");
-        System.out.println("****");
-        System.out.println("****");
-        System.out.println("****");
-        System.out.println("当前时间日期：" + DateUtil.nowMillisDefault());
-        System.out.println("当前时间日期：" + DateUtil.nowDefault());
-        System.out.println("当前时间日期：" + DateUtil.now("MM"));
-        for (int i=0 ; i<10 ; i++) {
-            System.out.println("当前时间日期：" + DateUtil.nowDefault());
 
-            System.out.println("当前时间日期毫秒：" + DateUtil.nowMillisDefault() +","+ DateUtil.nowMillisDefault());
-        }
+        System.out.println("当前时间日期字符串转为毫秒数：" + DateUtil.dateTimeToMills("2019-01-23 09:35:41"));
+        System.out.println("当前时间日期字符串转为日期格式：" + DateUtil.stringToLocalDateTime("2019-01-23 09:35:41"));
+
 
 
     }
