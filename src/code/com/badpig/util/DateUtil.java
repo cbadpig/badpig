@@ -12,6 +12,15 @@ import java.time.format.DateTimeFormatter;
  */
 public class DateUtil {
 
+    /**
+     * 日期格式-默认
+     */
+    private static final String PATTERN_DEFAULT = "yyyy-MM-dd HH:mm:ss";
+    /**
+     * 日期格式-默认带毫秒
+     */
+    private static final String PATTERN_DEFAULT_MILLIS = "yyyy-MM-dd HH:mm:ss:SSS";
+
     private DateUtil() {}
 
     private static final class DateUtilHolder {
@@ -51,7 +60,7 @@ public class DateUtil {
      * @return
      */
     public static String nowDefault() {
-        return now("yyyy-MM-dd HH:mm:ss");
+        return now(PATTERN_DEFAULT);
     }
 
     /**
@@ -59,7 +68,7 @@ public class DateUtil {
      * @return
      */
     public static String nowMillisDefault() {
-        return now("yyyy-MM-dd HH:mm:ss:SSS");
+        return now(PATTERN_DEFAULT_MILLIS);
     }
 
     /**
@@ -76,11 +85,13 @@ public class DateUtil {
      * @return
      */
     public static LocalDateTime stringToLocalDateTime(String dateTime,String pattern) {
+        DateTimeFormatter dateTimeFormatter = null;
         if (StringUtils.isNotBlank(pattern)) {
-            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
-            return LocalDateTime.parse(dateTime,dateTimeFormatter);
+            dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
+        } else {
+            dateTimeFormatter = DateTimeFormatter.ofPattern(PATTERN_DEFAULT);
         }
-        return LocalDateTime.parse(dateTime);
+        return LocalDateTime.parse(dateTime,dateTimeFormatter);
     }
 
     /**
@@ -88,17 +99,25 @@ public class DateUtil {
      * @return
      */
     public static LocalDateTime stringToLocalDateTime(String dateTime) {
-        return stringToLocalDateTime(dateTime,"yyyy-MM-dd HH:mm:ss");
+        return stringToLocalDateTime(dateTime,PATTERN_DEFAULT);
     }
 
     /**
      * 将日期字符串转为毫秒数
      * @return
      */
-    public static String dateTimeToMills(String dateTime) {
-        LocalDateTime localDateTime = stringToLocalDateTime(dateTime,"yyyy-MM-dd HH:mm:ss");
+    public static String dateTimeToMillis(String dateTime,String pattern) {
+        LocalDateTime localDateTime = stringToLocalDateTime(dateTime,PATTERN_DEFAULT);
         Long mills = localDateTime.toInstant(ZoneOffset.ofHours(8)).toEpochMilli();
         return String.valueOf(mills);
+    }
+
+    /**
+     * 将日期字符串转为毫秒数
+     * @return
+     */
+    public static String dateTimeToMillis(String dateTime) {
+        return dateTimeToMillis(dateTime,PATTERN_DEFAULT);
     }
 
 }
