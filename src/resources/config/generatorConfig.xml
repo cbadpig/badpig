@@ -28,7 +28,7 @@
 
         <!--生成JavaBean-->
         <!-- targetProject：生成的实体类所在的硬盘位置 -->
-        <javaModelGenerator targetPackage="test.model" targetProject="code.com.badpig.generator.bean">
+        <javaModelGenerator targetPackage="code.com.badpig.generator.bean" targetProject="src">
             <!-- 是否允许子包 -->
             <property name="enableSubPackages" value="true" />
             <!-- 是否清理从数据库中查询出的字符串左右两边的空白字符 -->
@@ -41,14 +41,14 @@
 
         <!--生成xml文件-->
         <!-- targetPackage 和 targetProject：生成的 mapper 文件的包和位置 -->
-        <sqlMapGenerator targetPackage="xml"  targetProject="code.com.badpig.generator.map">
+        <sqlMapGenerator targetPackage="code.com.badpig.generator.map.xml"  targetProject="src">
             <!-- 针对数据库的一个配置，是否把 schema 作为字包名 -->
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
         <!--生成dao文件-->
         <!-- targetPackage 和 targetProject：生成的 interface 文件的包和位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="dao"  targetProject="code.com.badpig.generator.map">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="code.com.badpig.generator.map.dao"  targetProject="src">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
