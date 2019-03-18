@@ -11,6 +11,13 @@
     <!-- id：起个名字 -->
     <!-- targetRuntime：设置生成的文件适用于那个 mybatis 版本 -->
     <context id="default" targetRuntime="MyBatis3">
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
         <!--数据库连接-->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost/bubu?serverTimezone=UTC&amp;useSSL=false"
@@ -28,7 +35,7 @@
 
         <!--生成JavaBean-->
         <!-- targetProject：生成的实体类所在的硬盘位置 -->
-        <javaModelGenerator targetPackage="code.com.badpig.generator.bean" targetProject="src">
+        <javaModelGenerator targetPackage="code.com.bubu.threadpool.bean" targetProject="src">
             <!-- 是否允许子包 -->
             <property name="enableSubPackages" value="true" />
             <!-- 是否清理从数据库中查询出的字符串左右两边的空白字符 -->
@@ -41,21 +48,28 @@
 
         <!--生成xml文件-->
         <!-- targetPackage 和 targetProject：生成的 mapper 文件的包和位置 -->
-        <sqlMapGenerator targetPackage="code.com.badpig.generator.map.xml"  targetProject="src">
+        <sqlMapGenerator targetPackage="code.com.bubu.threadpool.mapper.xml"  targetProject="src">
             <!-- 针对数据库的一个配置，是否把 schema 作为字包名 -->
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
         <!--生成dao文件-->
         <!-- targetPackage 和 targetProject：生成的 interface 文件的包和位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="code.com.badpig.generator.map.dao"  targetProject="src">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="code.com.bubu.threadpool.mapper.dao"  targetProject="src">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table tableName="t_sys_hmd" domainObjectName="HmdBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="t_sys_yh" domainObjectName="YhBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="t_lv_dt" domainObjectName="LvdtBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <!--<table tableName="t_sys_hmd" domainObjectName="HmdBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_sys_yh" domainObjectName="YhBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
         <table tableName="t_tp_dt" domainObjectName="TpdtBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-
+        <table tableName="t_tp_dz" domainObjectName="TpdzBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_tp_gz" domainObjectName="TpgzBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_tp_pl" domainObjectName="TpplBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_tp_sc" domainObjectName="TpscBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_tp_sx" domainObjectName="TpsxBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_tp_tg" domainObjectName="TptgBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_tp_wz" domainObjectName="TpwzBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_tp_xh" domainObjectName="TpxhBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_tp_zs" domainObjectName="TpzsBean"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 </generatorConfiguration>
