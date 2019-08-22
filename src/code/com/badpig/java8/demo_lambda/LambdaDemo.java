@@ -1,6 +1,7 @@
 package code.com.badpig.java8.demo_lambda;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class LambdaDemo {
@@ -27,10 +28,11 @@ public class LambdaDemo {
     }
 
     public static void demo_2() {
-
+        Runnable r = () -> System.out.println("hello world");
+        
     }
 
     public static void main(String[] args) {
-
+        demo_2();
     }
 }
