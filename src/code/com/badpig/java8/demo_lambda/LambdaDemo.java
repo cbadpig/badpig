@@ -29,7 +29,8 @@ public class LambdaDemo {
 
     public static void demo_2() {
         Runnable r = () -> System.out.println("hello world");
-        
+        Thread t = new Thread(r);
+        t.start();
     }
 
     public static void main(String[] args) {
