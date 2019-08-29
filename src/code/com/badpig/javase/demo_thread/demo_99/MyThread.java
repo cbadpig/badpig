@@ -1,4 +1,4 @@
-package code.com.badpig.javase.demo_thread;
+package code.com.badpig.javase.demo_thread.demo_99;
 
 public class MyThread extends Thread {
 

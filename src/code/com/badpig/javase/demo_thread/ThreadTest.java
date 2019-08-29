@@ -1,40 +1,42 @@
 package code.com.badpig.javase.demo_thread;
 
+import code.com.badpig.javase.demo_thread.demo_01.MyRunnable;
+import code.com.badpig.javase.demo_thread.demo_01.MyThread;
+import code.com.badpig.javase.demo_thread.demo_02.MyThread_02;
 import org.junit.jupiter.api.Test;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class ThreadTest {
 
+    /**
+     * 测试-继承Thread类
+     */
     @Test
-    public void testThread_01() {
+    public void demo_01() {
         MyThread myThread = new MyThread();
         myThread.start();
+        System.out.println("测试运行结束");
     }
 
+    /**
+     * 测试实现Runnable接口
+     */
     @Test
-    public void testRunnable_01() {
-        Thread thread = new Thread(new MyRunnable());
+    public void demo_02() {
+        MyRunnable myRunnable = new MyRunnable();
+        Thread thread = new Thread(myRunnable);
         thread.start();
+        System.out.println("测试运行结束");
     }
 
+    /**
+     * 测试currentThread()方法
+     */
     @Test
-    public void testPool_01() {
-        ExecutorService pool = Executors.newFixedThreadPool(5);
-        for (int i=0 ; i<100; i++) {
-            pool.submit(new MyRunnable());
-        }
-
-        pool.shutdown();
+    public void demo_02_01() {
+        MyThread_02 myThread_02 = new MyThread_02();
+        myThread_02.start();
+        System.out.println("测试方法被调用：" + Thread.currentThread().getName());
     }
 
-    public static void main(String[] args) {
-        MyThread myThread = new MyThread();
-        myThread.start();
-
-        Thread thread = new Thread(new MyRunnable());
-        thread.start();
-    }
 
 }
