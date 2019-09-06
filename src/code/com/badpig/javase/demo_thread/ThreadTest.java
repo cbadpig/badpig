@@ -3,7 +3,11 @@ package code.com.badpig.javase.demo_thread;
 import code.com.badpig.javase.demo_thread.demo_01.MyRunnable;
 import code.com.badpig.javase.demo_thread.demo_01.MyThread;
 import code.com.badpig.javase.demo_thread.demo_02.MyThread_02;
+import code.com.badpig.javase.demo_thread.demo_03.MyThread_03;
+import code.com.badpig.javase.demo_thread.demo_04.MyThread_04;
 import org.junit.jupiter.api.Test;
+
+import java.util.Date;
 
 public class ThreadTest {
 
@@ -38,5 +42,32 @@ public class ThreadTest {
         System.out.println("测试方法被调用：" + Thread.currentThread().getName());
     }
 
+    /**
+     * 测试线程的isAlive()方法
+     */
+    @Test
+    public void demo_03_01() {
+        MyThread_03 myThread_03 = new MyThread_03();
+        System.out.println("begin：" + myThread_03.isAlive());
+        myThread_03.start();
+        System.out.println("end：" + myThread_03.isAlive());
+    }
+
+    /**
+     * 测试线程的sleep()方法
+     */
+    @Test
+    public void demo_04_01() {
+        long start = System.currentTimeMillis();
+        try {
+            System.out.println("开始休眠");
+            Thread.sleep(2000);
+            System.out.println("结束休眠");
+            long end = System.currentTimeMillis();
+            System.out.println("休眠["+ (end-start) +"]毫秒");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
