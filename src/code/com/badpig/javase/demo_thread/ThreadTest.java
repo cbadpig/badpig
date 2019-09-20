@@ -5,6 +5,7 @@ import code.com.badpig.javase.demo_thread.demo_01.MyThread;
 import code.com.badpig.javase.demo_thread.demo_02.MyThread_02;
 import code.com.badpig.javase.demo_thread.demo_03.MyThread_03;
 import code.com.badpig.javase.demo_thread.demo_04.MyThread_04;
+import code.com.badpig.javase.demo_thread.demo_05.StaticTraceTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
@@ -69,5 +70,6 @@ public class ThreadTest {
             e.printStackTrace();
         }
     }
+
 
 }
