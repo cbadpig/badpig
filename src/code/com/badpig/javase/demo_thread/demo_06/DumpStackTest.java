@@ -1,5 +1,10 @@
 package code.com.badpig.javase.demo_thread.demo_06;
 
+/**
+ * 测试线程dumpStack()方法
+ * 该方法的作用是将当前线程的堆栈跟踪信息输出值标准的错误流中
+ * 该方法仅用于调试
+ */
 public class DumpStackTest {
     public void a() {
         b();
@@ -14,15 +19,15 @@ public class DumpStackTest {
         e();
     }
     public void e() {
-        StackTraceElement[] elements = Thread.currentThread().getStackTrace();
-        for (int i = 0; i < elements.length; i++) {
-            StackTraceElement element = elements[i];
-            System.out.println("className:"+ element.getClassName() +",methoudName:"+ element.getMethodName() +",fileName:"+ element.getFileName() +",lineNumber:" + element.getLineNumber());
-            //System.out.println("ClassLoaderName:"+ element.getClassLoaderName() +",ModuleName:"+ element.getModuleName() +",ModuleVersion:"+ element.getModuleVersion() );
-        }
+       int age = 0;
+       age = 100;
+       if(age == 100) {
+           Thread.dumpStack();
+       }
     }
 
     public static void main(String[] args) {
-
+        DumpStackTest dumpStackTest = new DumpStackTest();
+        dumpStackTest.a();
     }
 }
