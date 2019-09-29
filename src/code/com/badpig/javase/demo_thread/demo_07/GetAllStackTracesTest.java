@@ -29,11 +29,23 @@ public class GetAllStackTracesTest {
         for (Map.Entry<Thread, StackTraceElement[]> entry : map.entrySet()) {
             Thread thread = entry.getKey();
             StackTraceElement[] stackTraceElements = entry.getValue();
+            System.out.println("------------------每个线程的基本信息");
+            System.out.println("线程名：" + thread.getName());
+            System.out.println("线程状态：" + thread.getState());
+            System.out.println("stackTraceElements size：" + stackTraceElements.length);
+            if(stackTraceElements.length == 0) {
+                continue;
+            }
+            System.out.println("stackTraceElements数组基本信息，如下：");
+            for (StackTraceElement s:stackTraceElements) {
+                System.out.println("  " + s.getClassName() + " " + s.getMethodName() + " " + s.getLineNumber() );
+            }
         }
 
     }
 
     public static void main(String[] args) {
-
+        GetAllStackTracesTest getAllStackTracesTest = new GetAllStackTracesTest();
+        getAllStackTracesTest.a();
     }
 }
